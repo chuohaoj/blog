@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-#blog/blogapp/models.py
-
+from django.urls import reverse
 from django.utils.six import python_2_unicode_compatible
 
 # Create your models here.
@@ -21,7 +20,8 @@ class Tag(models.Model):
 
 @python_2_unicode_compatible
 class Post(models.Model):
-    title = models.CharField(max_length=70)
+    
+    title = models.CharField(max_length=100)
 
     body = models.TextField()
 
@@ -34,6 +34,10 @@ class Post(models.Model):
     tags = models.ManyToManyField(Tag, blank=True)
 
     author = models.ForeignKey(User)
+    objects = models.Manager()
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('blog:detail', kwargs={'pk': self.pk})
