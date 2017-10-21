@@ -22,7 +22,7 @@ urlpatterns = [
     
     url(r'^admin/', admin.site.urls),
     url(r'', include('blogapp.urls')),
-
+    url(r'', include('comments.urls')),
     #url(r'^$', views.index, name='index'),
 ]
 
