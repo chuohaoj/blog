@@ -1,8 +1,7 @@
 This is a log for learning  django.
 1. Using django framwork to build a blog system. (Django tutorial)
-2. Change db from sqlite3 to mongoDB.(pymongo as ORM)
-3. Setup everything on a VPS. (AWS)
-4. Run and test blog on the ducker. (docker)
+2. Change db from sqlite3 to mongoDB.(pymongo )
+
 
 Front end fork from 
 https://github.com/zmrenwu/django-blog-tutorial-templates
